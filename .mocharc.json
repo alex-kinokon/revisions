@@ -1,0 +1,5 @@
+{
+  "extension": ["ts"],
+  "require": ["esbuild-register"],
+  "node-option": ["loader=./scripts/mocha-loader.js"]
+}
