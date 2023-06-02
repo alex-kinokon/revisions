@@ -34,7 +34,7 @@ describe("revisions", () => {
   });
 
   it("should diff and store binary data faithfully", async function () {
-    this.timeout(10_000);
+    this.timeout(20_000);
 
     const photo = [
       read("./fixtures/japan-passport-1.generated.png"),

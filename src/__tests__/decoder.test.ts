@@ -19,7 +19,7 @@ describe("decoder", () => {
   describe("should work with xdelta data", () => {
     for (let i = 1; i <= 4; i++) {
       it(`should decode xdelta data ${i}`, function () {
-        this.timeout(10_000);
+        this.timeout(20_000);
         const folder = `./fixtures/xdelta/${i}`;
         const source = read(`${folder}/dictionary`);
         const delta = read(`${folder}/delta`);

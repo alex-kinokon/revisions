@@ -1,7 +1,7 @@
 # @proteria/revisions
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/your-username/revisions-library)
-[![CI Status](https://github.com/your-username/revisions-library/workflows/CI/badge.svg)](https://github.com/your-username/revisions-library/actions)
+[![CI Status](https://github.com/alex-kinokon/revisions/actions/workflows/test.yml/badge.svg)](https://github.com/alex-kinokon/revisions/actions)
 [![License](https://img.shields.io/badge/license-Apache_2.0-blue.svg)](https://github.com/your-username/revisions-library/blob/main/LICENSE)
 
 A library for storing and retrieving revisions of a file. This library allows you to efficiently manage and access different versions of a file. You can push new revisions, retrieve specific revisions by index, iterate over all revisions, and more. The history is fully serializable.
