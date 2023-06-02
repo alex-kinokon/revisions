@@ -1,4 +1,6 @@
-# @proteria/revisions
+# revisions
+
+> 🚧 This library is still in development and not published to npm yet. For build instruction, see the GitHub workflow file.
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/your-username/revisions-library)
 [![CI Status](https://github.com/alex-kinokon/revisions/actions/workflows/test.yml/badge.svg)](https://github.com/alex-kinokon/revisions/actions)
@@ -8,7 +10,7 @@ A library for storing and retrieving revisions of a file. This library allows yo
 
 ## Algorithm
 
-This library implements a version of SVN’s [skip deltas](https://svn.apache.org/repos/asf/subversion/trunk/notes/skip-deltas) and uses [open-cvdiff](https://github.com/google/open-vcdiff) behind the scene to efficiently stores deltas. This means `get` and `push` operations are O(_log_ N). However, common operations (like reverse sequential `get` and consecutive `push`) are heavily cached so the actual performance is better.
+This library implements a version of SVN’s [skip deltas](https://svn.apache.org/repos/asf/subversion/trunk/notes/skip-deltas) and uses [open-cvdiff](https://github.com/google/open-vcdiff) in [wasm](https://github.com/i404788/vcdiff-wasm.git) behind the scene to efficiently stores deltas. This means `get` and `push` operations are O(_log_ N). However, common operations (like reverse sequential `get` and consecutive `push`) are heavily cached so the actual performance is better.
 
 ## Installation
 

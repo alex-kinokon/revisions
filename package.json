@@ -53,11 +53,6 @@
   "upstream": {
     "version": 1,
     "sources": {
-      "comlink": {
-        "repository": "https://github.com/GoogleChromeLabs/comlink.git",
-        "commit": "dffe9050f63b1b39f30213adeb1dd4b9ed7d2594",
-        "branch": "main"
-      },
       "vcdiff-wasm": {
         "repository": "https://github.com/i404788/vcdiff-wasm.git",
         "commit": "fdff0c0ada6dd9795f2647d7ce7da84950dbe27c",
