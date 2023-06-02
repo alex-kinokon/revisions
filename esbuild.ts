@@ -51,7 +51,6 @@ async function bundle(platform: "browser" | "node") {
     ...options,
     entryPoints: ["./src/index.ts"],
     outdir: `dist/${platform}`,
-    sourcemap: PROD ? undefined : "inline",
     format: platform === "browser" ? "esm" : "cjs",
     logOverride: {
       "empty-import-meta": "silent",

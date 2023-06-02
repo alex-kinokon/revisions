@@ -42,6 +42,10 @@ interface SerializedRevisionEntry {
  * at most _log_(N) deltas are necessary to reconstruct revision _N_ of a
  * file.
  */
+
+/**
+ * Main `Revisions` class.
+ */
 export class Revisions implements AsyncIterable<Uint8Array> {
   readonly #cacheSize: number;
   readonly #revisions: RevisionEntry[] = [];
@@ -107,9 +111,11 @@ export class Revisions implements AsyncIterable<Uint8Array> {
     return this.#decodeEntry(this.#revisions[index]);
   }
 
-  toJSON() {
+  toJSON(): Record<string, unknown> {
     const decoder = new TextDecoder();
     return {
+      uuidCounter: this.#uuidCounter,
+      cacheSize: this.#cacheSize,
       revisions: this.#revisions.map(
         (r): SerializedRevisionEntry => ({
           id: r.id,
@@ -117,7 +123,6 @@ export class Revisions implements AsyncIterable<Uint8Array> {
           parentId: r.parentId,
         })
       ),
-      uuidCounter: this.#uuidCounter,
     };
   }
 
@@ -125,6 +130,8 @@ export class Revisions implements AsyncIterable<Uint8Array> {
     const encoder = new TextEncoder();
     const copy = new Revisions();
     copy.#uuidCounter = json.uuidCounter;
+    // @ts-expect-error readonly
+    copy.#cacheSize = json.cacheSize;
     const revisions = (json.revisions as SerializedRevisionEntry[]).map(
       (r): RevisionEntry => ({
         id: r.id,
